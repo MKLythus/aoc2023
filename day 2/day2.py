@@ -25,7 +25,7 @@ for line in Lines:
     if is_color_valid(red, RED_LIMIT) == True and is_color_valid(green, GREEN_LIMIT) == True and is_color_valid(blue, BLUE_LIMIT) == True:
         gamelist += game_id
 
-gamelist = list(map(lambda a : int(a), gamelist))
+gamelist = [int(x) for x in gamelist]
 
 print(sum(gamelist))
 
@@ -37,9 +37,9 @@ for line in Lines:
     green = re.findall("(\d+) green", line)
     blue = re.findall("(\d+) blue", line)
 
-    red = list(map(lambda a : int(a), red))
-    green = list(map(lambda a : int(a), green))
-    blue = list(map(lambda a : int(a), blue))
+    red = [int(x) for x in red]
+    green = [int(x) for x in green]
+    blue = [int(x) for x in blue]
     
     red.sort()
     green.sort()
