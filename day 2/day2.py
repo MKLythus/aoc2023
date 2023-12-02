@@ -13,6 +13,8 @@ def is_color_valid(color, limit):
     else:
         return False
 
+
+#part 1
 gamelist = []
 for line in Lines:
     red = re.findall("(\d+) red", line)
@@ -26,3 +28,22 @@ for line in Lines:
 gamelist = list(map(lambda a : int(a), gamelist))
 
 print(sum(gamelist))
+
+#part 2
+
+power_sum = 0
+for line in Lines:
+    red = re.findall("(\d+) red", line)
+    green = re.findall("(\d+) green", line)
+    blue = re.findall("(\d+) blue", line)
+
+    red = list(map(lambda a : int(a), red))
+    green = list(map(lambda a : int(a), green))
+    blue = list(map(lambda a : int(a), blue))
+    
+    red.sort()
+    green.sort()
+    blue.sort()
+    power_sum += red[-1] * green[-1] * blue[-1]
+
+print(power_sum)
