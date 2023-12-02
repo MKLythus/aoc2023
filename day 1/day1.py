@@ -1,5 +1,5 @@
 import re
-f=open("input.txt", "r")
+f=open("day 1\input.txt", "r")
 Lines = f.readlines()
 
 def digit_search(str, dir):
@@ -18,12 +18,12 @@ def digit_search(str, dir):
 #part 1
 digitslist = []
 for line in Lines:
-    digitslist.append((int([x for x in line if x.isdigit()][0]) * 10) + int([x for x in line if x.isdigit()][-1]))
+    digitslist += [int([x for x in line if x.isdigit()][0]) * 10 + int([x for x in line if x.isdigit()][-1])]
 print(sum(digitslist))
 
 #part 2
 digitslist = []
 for line in Lines:
-    digitslist.append((digit_search(line, "forward") * 10) + digit_search(line, "reverse"))
+    digitslist += [(digit_search(line, "forward") * 10) + digit_search(line, "reverse")]
 print(sum(digitslist))
 
