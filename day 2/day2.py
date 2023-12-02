@@ -22,7 +22,7 @@ for line in Lines:
     blue = re.findall("(\d+) blue", line)
     game_id = re.findall("Game (\d+)", line)
     
-    if is_color_valid(red, RED_LIMIT) == True and is_color_valid(green, GREEN_LIMIT) == True and is_color_valid(blue, BLUE_LIMIT) == True:
+    if is_color_valid(red, RED_LIMIT) and is_color_valid(green, GREEN_LIMIT) and is_color_valid(blue, BLUE_LIMIT):
         gamelist += game_id
 
 gamelist = [int(x) for x in gamelist]
