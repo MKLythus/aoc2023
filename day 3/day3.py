@@ -2,7 +2,7 @@ import re
 f=open("day 3\input.txt", "r")
 board = f.read()
 
-BOARD_LENGTH=141
+BOARD_LENGTH=re.search("^.*", board).span()[1]+1
 
 #part 1
 
